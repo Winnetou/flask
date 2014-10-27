@@ -56,7 +56,7 @@ class DispatchingJinjaLoader(BaseLoader):
         attempts = []
         tmplrv = None
 
-        for srcobj, loader in self._iter_loaders(template):
+        for srcobj, loader in self._iter_loaders():
             try:
                 rv = loader.get_source(environment, template)
                 if tmplrv is None:
