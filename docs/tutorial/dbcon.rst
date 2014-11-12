@@ -24,7 +24,7 @@ the details of this a bit later.
 For the time being all you have to know is that you can store information
 safely on the :data:`~flask.g` object.
 
-So when do you put it on there?  To do that you can make a helper
+So how do you put it on there?  To do that you can make a helper
 function.  The first time the function is called it will create a database
 connection for the current context and successive calls will return the
 already established connection::
@@ -39,7 +39,7 @@ already established connection::
 
 
 So now we know how to connect, but how do we properly disconnect?  For
-that flask provides us with the :meth:`~flask.Flask.teardown_appcontext`
+that Flask provides us with the :meth:`~flask.Flask.teardown_appcontext`
 decorator.  It's executed every time the application context tears down::
 
     @app.teardown_appcontext
@@ -64,7 +64,7 @@ Continue to :ref:`tutorial-dbinit`.
 .. hint:: Where do I put this code?
 
    If you've been following along in this tutorial, you might be wondering
-   where to put the code from this step and the next.  A logical place is to
+   where to put the code from this step and the next.  A logical solution is to
    group these module-level functions together, and put your new
    ``get_db`` and ``close_db`` functions below your existing
    ``connect_db`` function (following the tutorial line-by-line).
